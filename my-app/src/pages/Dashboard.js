@@ -13,7 +13,24 @@ export class Dashboard extends Component {
   render() {
     return(
         <div className="Dashboard">
-            
+            <Card>
+                <Card.Title>Product</Card.Title>
+                <Table>
+
+                </Table>
+            </Card>
+            <Card>
+                <Card.Title>Contract</Card.Title>
+                <Table>
+
+                </Table>
+            </Card>
+            <Card>
+                <Card.Title>Message</Card.Title>
+                <Table>
+                    
+                </Table>
+            </Card>
         </div>
     );
   }
