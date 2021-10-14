@@ -59,8 +59,8 @@ export default class App extends Component {
           <>
             <h2>Login</h2>
             <Button onClick={()=>this.updateLoginProfile("ADMIN")} variant="warning" className= "mb-3">Admin</Button>
-            <Button onClick={()=>this.updateLoginProfile("DOM_CUSTOMER")} variant="info" className= "mb-3"></Button>
-            <Button onClick={()=>this.updateLoginProfile("FOR_CUSTOMER")} variant="info" className= "mb-3"></Button>
+            <Button onClick={()=>this.updateLoginProfile("DOM_CUSTOMER")} variant="info" className= "mb-3">Domestic Customer</Button>
+            <Button onClick={()=>this.updateLoginProfile("FOR_CUSTOMER")} variant="info" className= "mb-3">Foreign Customer</Button>
           </>}
         </header>
       </div>
