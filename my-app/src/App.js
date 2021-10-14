@@ -9,9 +9,9 @@ export default class App extends Component {
   constructor() {
     super();
     this.profiles ={
-      "ADMIN": {name: "Admin", key: "a"},
-      "DOM_CUSTOMER": {name: "Domestic Customer", key: "b" },
-      "FOR_CUSTOMER": {name: "Foreign Customer", key: "c" },
+      "ADMIN": {name: "Admin", key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVHlwZSI6IkFETUlOIn0.hR8qytQy9l75YMCW9k9wDYOVJk4qG-qyHC7jqX0I0Ig'},
+      "DOM_CUSTOMER": {name: "Domestic Customer", key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVHlwZSI6IkRPTUVTVElDIn0.OdCKqt8b3WpWe5mPt5GwdxapSilObJv9p_JyxZwW17w' },
+      "FOR_CUSTOMER": {name: "Foreign Customer", key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVHlwZSI6IkZPUkVJR04ifQ.iTlQm0tUOJ4Boz72mOtsu3MXOgu7BOtR2dOG6xGSy00' },
     }
     this.state={
       currentLogin: null
