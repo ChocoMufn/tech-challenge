@@ -23,7 +23,6 @@ export default class App extends Component {
     this.setState({
       currentLogin: this.profiles[profile]
     })
-    console.log(this.profiles[profile])
   }
 
   componentDidMount(){
@@ -55,13 +54,13 @@ export default class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-        
-          {this.state.currentLogin ? <Dashboard user={this.state.currentLogin}/> : 
+
+          {this.state.currentLogin ? <Dashboard users={this.state.users} user={this.state.currentLogin}/> : 
           <>
             <h2>Login</h2>
             <Button onClick={()=>this.updateLoginProfile("ADMIN")} variant="warning" className= "mb-3">Admin</Button>
-            <Button onClick={()=>this.updateLoginProfile("DOM_CUSTOMER")} variant="info" className= "mb-3">Domestic Customer</Button>
-            <Button onClick={()=>this.updateLoginProfile("FOR_CUSTOMER")} variant="info" className= "mb-3">Foreign Customer</Button>
+            <Button onClick={()=>this.updateLoginProfile("DOM_CUSTOMER")} variant="info" className= "mb-3"></Button>
+            <Button onClick={()=>this.updateLoginProfile("FOR_CUSTOMER")} variant="info" className= "mb-3"></Button>
           </>}
         </header>
       </div>

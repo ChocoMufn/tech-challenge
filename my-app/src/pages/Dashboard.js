@@ -1,29 +1,13 @@
 import '../App.css';
+import './Dashboard.css';
 import React, { Component } from "react";
 import { Table, Card, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ContractCard from '../components/ContractCard';
+import ProductCard from '../components/ProductCard';
+import MessageCard from '../components/MessageCard';
 
 
-const PrintingCards = (notifications) => {
-
-    const makeCard = (card) => {
-        return (
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    {/* <Card.Title>{card.notification_type}</Card.Title>
-                    <Card.Title>{card.notification_id}</Card.Title> */}
-                    <Card.Text>{card.map()}</Card.Text>
-
-                </Card.Body>
-            </Card>
-        );
-    };
-
-    return (
-        <div>{notifications.map(makeCard)}</div>
-    );
-};
 
 export class Dashboard extends Component {
     constructor(props) {
@@ -82,17 +66,46 @@ export class Dashboard extends Component {
               })
               .catch(error => console.log('error', error));
     }
+    displayContracts(){
+        this.setState({showContracts: !this.state.showContracts});
+    }
+    displayProducts(){
+        this.setState({showProducts: !this.state.showProducts});
+    }
+    displayMessages(){
+        let tempBool = this.showMessages;
+        console.log(tempBool)
+        this.setState({showMessages: !this.state.showMessages});
+    }
+    getDate(date){
+        const formattedDate = new Date(date)
+        return formattedDate
+    }
 
     render() {
         return (
-            <div className="Dashboard">
+            <div className="Dashboard" style={{fontFamily: 'sans-serif'}}>
                 {/* {PrintingCards(Test(this.state.key))} */}
+                <div style={{padding: '10px', fontWeight: 'bold'}}>
+                <Button onClick={()=>this.displayContracts()} variant="danger" className= "mb-3" >Contracts</Button>
+                <Button onClick={()=>this.displayProducts()} variant="success" className= "mb-3">Products</Button>
+                <Button onClick={()=>this.displayMessages()} variant="info" className= "mb-3">Messages</Button>
+                </div>
 
                 {this.state.showContracts ? this.state.newContract.map(contract =>{
                    return( 
-                   <Card>
-                        <p style={{color: "black"}}>{contract['notification_id']}</p>
-                    </Card>)
+                       <ContractCard users={this.props.users} contract={contract}/>
+                   )
+                }) : <></>}
+                {this.state.showProducts ? this.state.newProduct.map(product =>{
+                   return( 
+                       <ProductCard product={product}/>
+                   )
+                }) : <></>}
+                {this.state.showMessages ? this.state.newMessages.map(message =>{
+                   return( 
+                        <MessageCard users={this.props.users} message={message}/>
+                   )
                 }) : <></>}
 
             </div>
