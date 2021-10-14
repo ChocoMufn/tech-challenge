@@ -1,6 +1,13 @@
-NOTES:
+Node.js version 14.17.6 was used.
 
-Use command to run on local host (since server dooesnt seem to trust it)
+## SETUP:
+- Open up terminal and make sure the directory is set to `my-app`. If it is not just type `cd my-app` into the terminal.
+- Run `npm install`
+- Then run `npm start` to start the React App. 
+
+## NOTES:
+
+Use command to run on localhost (since server doesn't seem to trust it)
 
 `open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials`
 
